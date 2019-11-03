@@ -1,0 +1,3 @@
+[submodule "ddclientRepo"]
+	path = ddclientRepo
+	url = https://github.com/ddclient/ddclient.git
