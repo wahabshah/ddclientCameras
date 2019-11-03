@@ -1,5 +1,5 @@
 
-# Raspberrypi (WLAN)
+# Raspberrypi
 
 ## Pre-requisites
 
@@ -14,6 +14,9 @@ git clone https://github.com/wahabshah/ddclientCameras.git
 cd ddclientCameras
 ```
 
+## Check file ddclient.txt for hostname
+
+
 ## Startup Script
 ```sh
 cd raspberrypi
@@ -22,8 +25,29 @@ sudo ./startup_ddclient.sh
 
 ## Troubleshoot
 
-``sh
+### Check status of ddclient.service
+```sh
 sudo systemctl status ddclient.service
+```
 
-ddclient -query
+### Restart service ddclient.service
+```sh
+sudo systemctl restart ddclient.service
+```
+
+### Remove cache and force update (method 1)
+```sh
+sudo rm -f /var/cache/ddclient/ddclient.cache
+sudo ddclient -daemon=0 -debug -verbose -noquiet
+```
+
+### Remove cache and force update (method 2)
+```sh
+sudo rm -f /var/cache/ddclient/ddclient.cache
+sudo systemctl restart ddclient.service
+```
+
+### Just query ddclient
+```sh
+sudo ddclient -query
 ```

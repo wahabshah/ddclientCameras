@@ -4,7 +4,6 @@ cp ddclient /usr/sbin/
 mkdir -p /etc/ddclient
 mkdir -p /var/cache/ddclient
 cp ddclient.txt /etc/ddclient/ddclient.conf
-chmod 666 /etc/ddclient/ddclient.conf
 
 
 ## For those using systemd:
